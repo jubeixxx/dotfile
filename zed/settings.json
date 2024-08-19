@@ -1,0 +1,73 @@
+{
+  "relative_line_numbers": true,
+  "formatter": "language_server",
+  "format_on_save": "on",
+  "tabs": {
+    "git_status": true,
+    "close_position": "right"
+  },
+  "buffer_font_family": "MartianMono Nerd Font Mono",
+  "buffer_font_size": 15,
+  "show_whitespaces": "all",
+  "cursor_blink": false,
+  "buffer_line_height": {
+    "custom": 1.7
+  },
+  "inlay_hints": {
+    "enabled": false
+  },
+  "scrollbar": {
+    "show": "never"
+  },
+  "vim_mode": true,
+  "experimental.theme_overrides": {
+    "background.appearance": "blurred",
+    "background": "#11111130",
+    "editor.background": "#000000D0",
+    "tab_bar.background": "#000000D0",
+    "editor.gutter.background": "#000000D0",
+    "terminal.background": "#000000D0",
+    "toolbar.background": "#000000D0",
+    "tab.inactive_background": "#00000000",
+    "tab.active_background": "#000000D0",
+    "border": "#000000D0",
+    "status_bar.background": "#000000D0",
+    "title_bar.background": "#000000D0",
+    "panel.background": "#000000D0",
+    "border.variant": "#00000000",
+    "editor.line_number": "#FFFFFF",
+    "editor.active_line_number": "#FFFF00",
+    "link_text.hover": "#00FF0000",
+    "scrollbar.track.background": "#00000000",
+  },
+  "lsp": {
+    "gopls": {
+      "initialization_options": {
+        "gofumpt": true,
+        "usePlaceholders": true,
+        "staticcheck": true,
+        "codelenses": {
+          "gc_details": true,
+          "generate": true,
+          "regenerate_cgo": true,
+          "tidy": true,
+          "upgrade_dependency": true,
+          "vendor": true
+        },
+        "hints": {
+          "assignVariableTypes": true,
+          "compositeLiteralFields": true,
+          "compositeLiteralTypes": true,
+          "constantValues": true,
+          "functionTypeParameters": true,
+          "parameterNames": true,
+          "rangeVariableTypes": true
+        },
+        "codelens": {
+          "generate": true, // Don't show the `go generate` lens.
+          "gc_details": true // Show a code lens toggling the display of gc's choices.
+        }
+      }
+    }
+  }
+}

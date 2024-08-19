@@ -1,0 +1,72 @@
+vim.opt.shell = "/bin/zsh"
+
+vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_tutor_mode_plugin = 1
+
+vim.opt.clipboard:append { "unnamed", "unnamedplus" }
+
+vim.opt.backupdir = vim.fn.expand "~/.config/nvim/backup" --where to put backup
+vim.opt.backup = true
+vim.opt.swapfile = false
+vim.opt.wildignore = "*.swp,*.bak,*.pyc,*.class,*.o,*.obj,*.ali"
+vim.opt.hidden = true
+
+vim.opt.timeout = false
+vim.opt.ttimeout = false
+
+vim.opt.list = false
+vim.opt.listchars = "tab:>-,trail:-"
+vim.opt.foldenable = false
+
+vim.opt.expandtab = true
+vim.opt.shiftround = true
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
+vim.opt.tabstop = 2
+vim.opt.autoindent = true
+vim.opt.autoindent = false -- use treesitter for indent instead
+vim.opt.smartindent = false
+vim.opt.smarttab = true
+
+-- -- UI
+vim.opt.relativenumber = true
+vim.opt.number = true
+vim.opt.linespace = 0
+vim.opt.report = 0
+-- vim.opt.shortmess = "aOstTc"
+vim.opt.ruler = false
+vim.opt.showcmd = false
+vim.opt.showmode = false
+vim.opt.signcolumn = "yes"
+vim.opt.completeopt = "menuone,noselect"
+-- -- vim.opt.conceallevel = 2
+-- vim.opt.laststatus = 0
+--
+-- -- vim.opt.spell = disable
+-- -- vim.opt.spelllang = { "en_us" }
+--
+vim.opt.lazyredraw = true -- speed up macros
+--
+vim.opt.termguicolors = true
+vim.opt.background = "dark"
+--
+USER = os.getenv "USER"
+local curr_group = vim.fn.system "id -ng 2> /dev/null | tr -d '\n'"
+
+BACKUPDIR = "/home/" .. curr_group .. "/" .. USER .. "/nvim/backup//"
+UNDODIR = "/home/" .. curr_group .. "/" .. USER .. "/nvim/undo//"
+
+vim.opt.backupdir = BACKUPDIR
+vim.opt.undodir = UNDODIR
+vim.opt.backup = true
+vim.opt.undofile = true
+
+-- Append backup files with timestamp
+vim.api.nvim_create_autocmd("BufWritePre", {
+  callback = function()
+    local extension = "~" .. vim.fn.strftime "%Y-%m-%d-%H%M%S"
+    vim.o.backupext = extension
+  end,
+})
+
+vim.cmd "colorscheme cyberdream"

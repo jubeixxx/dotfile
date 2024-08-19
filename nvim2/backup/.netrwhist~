@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/home/azharnazli/.config/nvim'
+let g:netrw_dirhist_4='/home/azharnazli/.config/nvim/lua/config'
+let g:netrw_dirhist_3='/home/azharnazli/.config/nvim/lua'
+let g:netrw_dirhist_2='/home/azharnazli/.config/nvim'
+let g:netrw_dirhist_1='/home/azharnazli/Documents/personal/code/zig/luazig'
+let g:netrw_dirhist_0='/home/azharnazli/Documents/batumbu/btb-backoffice-web'
+let g:netrw_dirhist_9='/home/azharnazli/.config/nvim'
+let g:netrw_dirhist_8='/home/azharnazli/Documents/personal/code/zig/check'
+let g:netrw_dirhist_7='/home/azharnazli/Documents/batumbu/btb-backoffice-web'
+let g:netrw_dirhist_6='/home/azharnazli/Documents/personal/code/zig/check'

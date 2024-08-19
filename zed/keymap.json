@@ -1,0 +1,49 @@
+[
+  {
+    "context": "Editor && vim_mode == visual && !VimWaiting && !VimObject",
+    "bindings": {
+      "alt-j": "editor::MoveLineDown",
+      "alt-k": "editor::MoveLineUp"
+    }
+  },
+  {
+    "context": "Editor && (showing_code_actions || showing_completions)",
+    "bindings": {
+      "shift-tab": "editor::ContextMenuPrev",
+      "up": "editor::ContextMenuPrev",
+      "ctrl-p": "editor::ContextMenuPrev",
+      "tab": "editor::ContextMenuNext",
+      "down": "editor::ContextMenuNext",
+      "ctrl-n": "editor::ContextMenuNext",
+      "pageup": "editor::ContextMenuFirst",
+      "pagedown": "editor::ContextMenuLast"
+    }
+  },
+  {
+    "context": "Workspace && vim_mode != insert && !VimWaiting && !VimObject",
+    "bindings": {
+      // "space e": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    "context": "Editor && vim_mode != insert && !VimWaiting && !VimObject",
+    "bindings": {
+      "alt-o": "editor::ToggleInlayHints",
+      "space f f": "file_finder::Toggle",
+      "[ b": "pane::ActivatePrevItem",
+      "] b": "pane::ActivateNextItem",
+      "space c": "pane::CloseActiveItem",
+      "space b c": "pane::CloseAllItems",
+      "ctrl-\\": "terminal_panel::ToggleFocus",
+      "alt-j": "editor::MoveLineDown",
+      "alt-k": "editor::MoveLineUp",
+      "space e": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-\\": "workspace::ToggleBottomDock"
+    }
+  }
+]

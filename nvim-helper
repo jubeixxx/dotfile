@@ -1,0 +1,50 @@
+#!/bin/sh
+nvim_path=~/.config/nvim
+backup_path=~/.config/backup
+
+first=$1
+current_nvim=$(<~/.config/nvim/current_nvim)
+
+if [[ -z $current_nvim ]]; then
+  echo "current nvim not found"
+  cp -r $backup_path/nvim $nvim_path
+  exit 1
+fi
+
+
+if [[ $current_nvim == "astro" ]]; then
+  if [[ $first == "personal" ]]; then
+    # remove backup astronvim
+    rm -rf $backup_path/nvim
+    # copy current astronvim to backup folder
+    cp -r $nvim_path $backup_path/nvim
+    # remove nvim
+    rm -rf $nvim_path
+    # copy backup personal to nvim config
+    cp -r $backup_path/nvim2 $nvim_path
+  else
+    rm -rf $backup_path/nvim
+    cp -r $nvim_path $backup_path/nvim
+    echo "current astro"
+  fi
+fi
+
+
+if [[ $current_nvim == "personal" ]]; then
+  if [[ $first == "astro" ]]; then
+    # remove backup personal
+    rm -rf $backup_path/nvim2
+    # copy current personal to backup folder
+    cp -r $nvim_path $backup_path/nvim2
+    # remove nvim
+    rm -rf $nvim_path
+    # copy backup astro to nvim config
+    cp -r $backup_path/nvim $nvim_path
+  else
+    rm -rf $backup_path/nvim2
+    cp -r $nvim_path $backup_path/nvim2
+    echo "current personal"
+  fi
+fi
+
+
